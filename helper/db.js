@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 // });
 
 module.exports = () => {
-    mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connect('mongodb+srv://test:test@cluster0.nnuvc.mongodb.net/movies', { useNewUrlParser: true, useUnifiedTopology: true });
     const db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function () {
