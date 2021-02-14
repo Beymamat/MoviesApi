@@ -10,6 +10,8 @@ const moviesRouter = require('./routes/movies');
 
 const app = express();
 
+const db = require('./helper/db')();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -22,11 +24,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/movies', moviesRouter);
+app.use('/api/movies', moviesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  next(createError(404)); 
 });
 
 // error handler
