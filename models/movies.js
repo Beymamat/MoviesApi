@@ -23,8 +23,8 @@ const MoviesSchema=new schema({
         max: 2021
     },
     director: {
-        type: Number,
-        default:0
+        type: String,
+        default:"0"
     },
     imdb_score:{
         type: Number,
